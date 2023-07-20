@@ -5,20 +5,20 @@
 class Ks < Formula
   desc ""
   homepage ""
-  version "1.0.1"
+  version "1.1.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/isksss/ks/releases/download/v1.0.1/ks_Darwin_x86_64.tar.gz"
-      sha256 "e4f2c20d5411140f54a87297f8fb516575cc336dffdd2e6e29703d5ebabbe7b7"
+      url "https://github.com/isksss/ks/releases/download/v1.1.0/ks_Darwin_x86_64.tar.gz"
+      sha256 "d6d88f416babc19a137e9e182c598ec8d9f940279c1f0de14e8d0ee6257ad04f"
 
       def install
         bin.install "ks"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/isksss/ks/releases/download/v1.0.1/ks_Darwin_arm64.tar.gz"
-      sha256 "c6adde630eafe74052a7012b6b1bb74e52eec8dfe865aa56c7ee85445d90c5ab"
+      url "https://github.com/isksss/ks/releases/download/v1.1.0/ks_Darwin_arm64.tar.gz"
+      sha256 "6d37ba9823d8b70eb57b3a5438e2a2c76cd7c6b6afbb1824c6ceebd8f64690b0"
 
       def install
         bin.install "ks"
@@ -27,17 +27,17 @@ class Ks < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/isksss/ks/releases/download/v1.0.1/ks_Linux_x86_64.tar.gz"
-      sha256 "0e4df878f7d7b65f77b51b70946f5797960b32d01a79af41f83ad4673693c015"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/isksss/ks/releases/download/v1.1.0/ks_Linux_arm64.tar.gz"
+      sha256 "5172a697cb12e5dd243ddb194ae0c9fdd85b0d0d7e813dc98b88b52069f0ef8a"
 
       def install
         bin.install "ks"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/isksss/ks/releases/download/v1.0.1/ks_Linux_arm64.tar.gz"
-      sha256 "b509ee9b1f15706dd96265bbcc5f2f485b41034be3efeb9b38671870cfcffe83"
+    if Hardware::CPU.intel?
+      url "https://github.com/isksss/ks/releases/download/v1.1.0/ks_Linux_x86_64.tar.gz"
+      sha256 "e0311d56cecaedaa375fde5803fc1531378ac97124678a23acf5c8a897af22cb"
 
       def install
         bin.install "ks"
